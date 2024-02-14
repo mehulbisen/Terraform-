@@ -8,6 +8,6 @@ resource "aws_instance" "my-instance" {
     key_name = "irelanddd"
     security_groups = ["sg-00f87cceadfe8e076"]
     tags = {
-        Name = instance-1
+        Name = "instance-1"
     }
 }
