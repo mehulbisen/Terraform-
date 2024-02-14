@@ -1,8 +1,0 @@
-provider "aws" {
-    fjrhfrbf
-
-
-
-    gyy
-
-}
