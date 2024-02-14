@@ -14,18 +14,18 @@ resource = "aws_instance" "my-instance" {
 
 #variables
 
-variables "ami_id" {
+variable "ami_id" {
     default = "ami-0766b4b472db7e3b9"
 }
 
-variables "key_name" {
+variable "key_name" {
     default = "irelanddd"
 }
 
-variables "instance_type" {
+variable "instance_type" {
     default = "t2.micro"
 }
 
-variables "vpc_security_group_ids" {
+variable "vpc_security_group_ids" {
     default = ["sg-00f87cceadfe8e076"]
 }
