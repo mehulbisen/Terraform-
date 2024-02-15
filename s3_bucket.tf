@@ -14,7 +14,7 @@ resource "aws_s3_bucket_policy" "my_policy" {
     policy = data.aws_s3_bucket_policy_document.read_only_access.json
 }
 
-data "aws_s3_bucket_policy" "read_only_access" {
+data "aws_s3_bucket_policy_document" "read_only_access" {
     "Version": "2012-10-17",
     "Statement": [
         {
