@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "my_s3" {
 
 resource "aws_s3_bucket_policy" "my_policy" {
     bucket = aws_s3_bucket.my_s3.id
-    policy = data.aws_s3_bucket_policy.read_only_access.json
+    policy = data.aws_s3_bucket_policy_document.read_only_access.json
 }
 
 data "aws_s3_bucket_policy" "read_only_access" {
