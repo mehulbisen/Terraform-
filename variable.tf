@@ -6,7 +6,7 @@ resource "aws_instance" "my-instance" {
     ami = var.ami_id
     key_name = var.key_name
     instance_type = var.instance_type
-    vpc_security_group_ids = "var.vpc_security_group_ids.id"
+    vpc_security_group_ids = var.vpc_security_group_ids
     tags = {
         Name = "instance-1"
     }
