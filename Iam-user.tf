@@ -4,8 +4,5 @@ provider "aws" {
 
 resource "aws_iam_user" "saku_user" {
     name = "sakku"
-    permisssions_boundary = "arn:aws:iam::aws:policy/AdministratorAccess"
-    tag {
-        env = "dev"
-    }
+    permissions_boundary = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
