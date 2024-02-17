@@ -49,7 +49,7 @@ resource "aws_subnet" "db_subnet" {
     }
 }
 #DB Subnet
-resource "aws_subnet" "db_subnet" {
+resource "aws_subnet" "db_subnet2" {
     vpc_id = aws_vpc.mehul_vpc.id
     cidr_block = "176.22.6.0/24"
     tags = {
