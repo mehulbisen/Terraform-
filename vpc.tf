@@ -64,4 +64,5 @@ resource "aws_internet_gateway" "my_IGW" {
     Name = "My_IGW"
   }
 }
+# Route Table
 
