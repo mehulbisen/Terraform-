@@ -1,0 +1,82 @@
+							-----Ansible-----   [Similar Tools - Chef]
+
+1. Ansible is a configuration management tool which automates the system administrator tasks. Ansible works on yaml language and ansible is agent less.
+
+2. Ansible is an open source IT configuration, management, deployment and orchestration tool. It works on push mehcanism that means all the updates or codes are pushed to the nodes.
+
+3. If I want to install any package or I want to install ubuntu on many servers then Ansible can be used to do this we do not need to go on each and every server and install Ansible can do it.
+
+4. Architecture of Ansible :
+
+		    -----|Node1|	
+	|Ansible|--------|Node2|
+		    -----|Node3|  
+
+5. Ansible server communicates with nodes through SSH. The configuration file of ansible is /etc/ansible/ansible.cfg
+
+6. Ansible is an open source configuration management tool which manages the configurations of the infrastructure like installing docker or nginx on the multiple systems.
+=> For ex: If we want to create the ec2 instance on AWS we will use the Terraform and if we want to manage the configuration of that ec2 instance we will use Ansible.
+
+7. The main difference between terraform and ansible is that terraform is a provisioning tool and ansible is a configuration management tool.
+
+8. Ansible works on push based mechanism and chef work on pull base mechanism.
+=> (a) Push Based : In push based mechanism the one server which is main has the ansible and it pushes the notification to the other connected nodes.
+
+9. In order to connect he server with master ansible server you need to add public ip of the servers to the /etc/ansible/hosts i.e hosts file.
+
+10. Installation of Ansible on ubuntu machine:
+	step 1 => sudo apt-add-repository ppa:ansible/ansible
+	step 2 => sudo apt update
+	step 3 => sudo apt install ansible
+
+11. Playbooks is nothing but the yaml file in which multiple tasks can be given. Playbook run the given tasks on the defined servers.[For ex: task1 = install nginx ; task2 = start nginx]
+	Commands: (a) ansible-playbook -v abc.yml [-v => verbose]  => Executes an ansible playbook.
+
+12.  Sample playbook => 
+	|-
+	| name: abc
+	| hosts: servers
+	| tasks:
+	|   - name: show-date
+	|     command: date
+	|   - name: show-uptime
+	|     command: uptime
+
+13. If you want to take the root user acces into the servers and run the command then we need to give the variale "become": "yes" or "true".
+	|-
+	| name: xyz
+	| hosts: servers
+	| become: yes
+	| tasks:
+	|   - name: install nginx
+	|     apt:
+	|	name: nginx
+	|	state: latest
+	|   - name: start nginx
+	|     service: 
+	|	name: nginx
+	|	state: started
+	|	enabled: yes
+
+14. We can create a static website using ansible playbook below is the yaml file for it:
+	|-
+	| name: xyz
+	| hosts: servers
+	| become: yes
+	| tasks:
+	|   - name: install nginx
+	|     apt:
+	|	name: nginx
+	|	state: latest
+	|   - name: start nginx
+	|     service: 
+	|	name: nginx
+	|	state: started
+	|	enabled: yes
+	|   - name: host a static website
+	|     copy:
+	|	src: index.html
+	|	dest: /var/www/html/
+
+
+
